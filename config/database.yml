@@ -1,0 +1,22 @@
+
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  collation: utf8mb4_unicode_ci
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: 12345678
+  host: 127.0.0.1
+  port: 3306
+
+development:
+  <<: *default
+  database: rails_vue_development
+test:
+  <<: *default
+  database: rails_vue_test
+production:
+  <<: *default
+  database: rails_vue_production
+  username: rails_vue
+  password: <%= ENV['RAILS_VUE_DATABASE_PASSWORD'] %>
