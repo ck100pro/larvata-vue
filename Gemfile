@@ -12,6 +12,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'foreman', '~> 0.87.2'
 
+gem 'pry'
+gem 'pry-byebug'
+gem 'pry-rails'
+gem 'pry-remote'
+gem 'pry-stack_explorer'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -19,6 +25,7 @@ end
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
+  gem 'faker', '~> 2.15', '>= 2.15.1'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
