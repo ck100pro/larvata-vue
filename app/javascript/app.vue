@@ -1,12 +1,31 @@
 <template>
-  <div id="app">
-        <p>{{ message }}</p>
-        <v-app>
+        <v-app id="inspire">
+            <v-navigation-drawer
+                v-model="drawer"
+                app
+            >
+            <!--  -->
+            </v-navigation-drawer>
+
+            <v-app-bar app>
+                <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+                <v-toolbar-title>Application</v-toolbar-title>
+            </v-app-bar>
+
             <v-main>
+                <div class="main-body grey lighten-4 pa-8">
+                    <div class="main-container white pa-7">
+                        <div class="main-search pm-4">
+                            <larvata-search></larvata-search>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- 搜尋區塊 -->
-                <larvata-search></larvata-search>
+                
                 <!-- 資料欄位 -->
-                <v-data-table
+                <!-- <v-data-table
                     :headers="headers"
                     :items="desserts"
                     item-key="name"
@@ -27,10 +46,9 @@
                             <td colspan="4"></td>
                         </tr>
                     </template>
-                </v-data-table>
+                </v-data-table> -->
             </v-main>
         </v-app>
-  </div>
 </template>
 
 <script>
@@ -38,7 +56,7 @@ import larvataSearch from './compents/search'
 export default {
   data () {
     return {
-      message: 'Hello',
+      drawer: null,
       search: '',
       calories: '',
       view: false,
@@ -166,8 +184,10 @@ export default {
 </script>
 
 <style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
+    .main-body {
+        height: 100%;
+    }
+    .main-search {
+        border: 1px solid gray;
+    }
 </style>
