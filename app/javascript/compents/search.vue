@@ -1,57 +1,56 @@
 <template>
-    <v-container class="pa-3 white">
-        <v-row>
-            <v-col cols='12'>
-                <v-btn
-                    @click="view = !view"
-                    block>
-                    篩選條件</v-btn>
-            </v-col>
-            
+    <v-row class="pa-4">
+        <v-col cols='12'>
+            <v-btn
+                @click="view = !view"
+                block
+                class='light-blue--text'>
+                篩選條件</v-btn>
+        </v-col>
+        
 
-            <v-col class="px-10" cols='12' v-if="view">
-                <v-row>
-                    <v-col cols='2'>
-                        組織
-                    </v-col>
-                    <v-col cols='10'>
-                        <v-autocomplete
-                            @click="MouseEvent"
-                            label="請選擇"
-                            :loading="items.org.loading"
-                            :items='items.org.data'
-                            id='org'
-                            name='org_id'
-                            clearable
-                            hide-no-data
-                            solo
-                            dense
-                            ></v-autocomplete>
-                    </v-col>
+        <v-col class="px-10" cols='12' v-if="view">
+            <v-row>
+                <v-col cols='2'>
+                    組織
+                </v-col>
+                <v-col cols='10'>
+                    <v-autocomplete
+                        @click="MouseEvent"
+                        label="請選擇"
+                        :loading="items.org.loading"
+                        :items='items.org.data'
+                        id='org'
+                        name='org_id'
+                        clearable
+                        hide-no-data
+                        solo
+                        dense
+                        ></v-autocomplete>
+                </v-col>
 
-                </v-row>
-                <v-row>
-                    <v-col cols='2'>
-                        廠商
-                    </v-col>
-                    <v-col cols='10'>
-                        <v-autocomplete
-                            label="請選擇"
-                            id='manufacturer'
-                            name='manufacturer_id'
-                            :loading="items.manufacturer.loading"
-                            :items='items.manufacturer.data'
-                            @click="MouseEvent"
-                            clearable
-                            hide-no-data
-                            solo
-                            dense
-                            ></v-autocomplete>
-                    </v-col>
-                </v-row>
-            </v-col>
-        </v-row>
-    </v-container>
+            </v-row>
+            <v-row>
+                <v-col cols='2'>
+                    廠商
+                </v-col>
+                <v-col cols='10'>
+                    <v-autocomplete
+                        label="請選擇"
+                        id='manufacturer'
+                        name='manufacturer_id'
+                        :loading="items.manufacturer.loading"
+                        :items='items.manufacturer.data'
+                        @click="MouseEvent"
+                        clearable
+                        hide-no-data
+                        solo
+                        dense
+                        ></v-autocomplete>
+                </v-col>
+            </v-row>
+        </v-col>
+    </v-row>
 </template>
 
 <script>
@@ -95,5 +94,5 @@ export default {
 </script>
 
 <style scoped>
-    
+
 </style>
