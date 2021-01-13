@@ -43,7 +43,7 @@
                         :items='items.manufacturer.data'
                         @click="MouseEvent"
                         clearable
-                        hide-no-data
+                        :hide-no-data="hideNoData"
                         solo
                         dense
                         ></v-autocomplete>
@@ -59,6 +59,8 @@ export default {
         return {
             view: false,
             loading: false,
+            hideNoData: true,
+            hello: [],
             items: { 
                 org: {
                     url: 'org',
@@ -78,12 +80,13 @@ export default {
             let url = targetValue['url']
             targetValue['loading'] = true
 
-            this.axios.get(`/${url}`).then((response) => {
-                // setTimeout用於模擬資料延遲回傳
-                setTimeout(() => {
-                    targetValue['data'] = response.data
-                    targetValue['loading'] = false
-                }, 500)
+            this.axios.get(`api/${url}/to_select`).then((response) => {
+                targetValue['data'] = response.data
+            }).catch((error) => {
+
+            }).then(() => {
+                targetValue['loading'] = false
+                targetValue['data'] === 0 ? this.hideNoData = false : this.hideNoData = true
             })
         }
     },
