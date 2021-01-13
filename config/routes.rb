@@ -8,7 +8,10 @@ Rails.application.routes.draw do
       get :to_select, on: :collection
     end
     resources :manufacturer, only: [] do
-      get :to_select, on: :collection
+      collection do
+        get :to_select
+        get :datatables
+      end
     end
   end
 end
