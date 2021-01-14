@@ -79,7 +79,7 @@ export default {
                     action: 'mdi-folder',
                     items: [
                         { title: '公司資料', href:'/company' },
-                        { title: '訪談紀錄' }
+                        { title: '訪談紀錄', href:'/talk' }
                     ],
                     title: '客戶管理',
                 },

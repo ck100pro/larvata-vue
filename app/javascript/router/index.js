@@ -5,7 +5,8 @@ const router = new VueRouter({
     mode: 'history',
     routes: [
       { path: '/dashboard' },
-      { path: '/company', component: Company }
+      { path: '/company', component: Company },
+      { path: '/talk' }
     ]
   })
 
