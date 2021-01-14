@@ -3,27 +3,33 @@ require("@rails/activestorage").start()
 require("channels")
 
 
-import Vue from 'vue'
-import Vuetify from 'vuetify'
+import Vue from 'vue/dist/vue.js'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueRouter from 'vue-router'
-import App from '../app.vue'
+// import Vuetify from 'vuetify'
+// import vuetify from './vuetify'
+// import App from '../app.vue'
 
-import 'vuetify/dist/vuetify.min.css'
 import '@mdi/font/css/materialdesignicons.css'
 import router from '../router/index'
 
 
-Vue.use(Vuetify)
+import Vuetify, { VCard, VRating, VToolbar, VBtn, VApp, VListItem, VListItemContent, VListItemTitle, VListGroup, VListItemAction, VList, VListItemSubtitle, VListItemAvatar, VCardActions } from 'vuetify/lib'
+import { Ripple } from 'vuetify/lib/directives'
+
+const vuetify = new Vuetify();
 Vue.use(VueAxios, axios)
 Vue.use(VueRouter)
 
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
-    vuetify: new Vuetify({ icons: { iconfont: 'mdi' }}),
-    router,
-    render: h => h(App)
+    components: { VCard, VRating, VToolbar, VBtn, VApp, VListItem, VListItemContent, VListItemTitle, VListGroup, VListItemAction, VList, VListItemSubtitle, VListItemAvatar, VCardActions },
+    vuetify,
+    directives: {
+      Ripple,
+    },
+    router
   }).$mount('#vue-app')
 })
