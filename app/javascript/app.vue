@@ -1,7 +1,11 @@
 <template>
         <v-app id="inspire">
-            <navigation-drawer 
-                :drawer='drawer'></navigation-drawer>
+            <v-navigation-drawer
+                v-model="drawer"
+                app
+            >
+                <navigation-drawer></navigation-drawer>
+            </v-navigation-drawer>
 
             <v-app-bar app>
                 <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
