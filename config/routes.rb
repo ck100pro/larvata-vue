@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :hello, only: [:index]
-  resources :org, only: [:index]
-  resources :manufacturer, only: [:index]
+  resources :company, only: [:index]
 
   namespace :api do
     resources :org, only: [] do
