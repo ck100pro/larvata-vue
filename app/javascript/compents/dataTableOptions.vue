@@ -31,6 +31,7 @@
         methods: {
             showItem() {
                 console.log(this.item)
+                this.$router.push({ path: `/company/${this.item.id}`})
             },
             editItem() {
                 console.log(this.item)

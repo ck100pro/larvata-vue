@@ -39,7 +39,7 @@
 </template>
 
 <script>
-  import larvataDataTableOptions from './options'
+  import larvataDataTableOptions from './dataTableOptions'
 
   export default {
     data () {
@@ -136,9 +136,9 @@
         this.datatableAttr()
       }
     },
-    created: function() {
+    mounted: function() {
       this.datatableAttr()
     },
-    components: { larvataDataTableOptions }
+    components: { larvataDataTableOptions },
   }
 </script>
